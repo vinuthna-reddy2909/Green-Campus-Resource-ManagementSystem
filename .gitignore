@@ -1,0 +1,9 @@
+# Java / Maven
+backend/target/
+*.class
+
+# Local secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+application-local.yml

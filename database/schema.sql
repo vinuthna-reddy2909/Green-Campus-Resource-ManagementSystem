@@ -1,0 +1,4 @@
+-- The source of truth for schema creation is the Flyway migration:
+-- backend/src/main/resources/db/migration/V1__initial_schema.sql
+-- backend/src/main/resources/db/migration/V2__ewaste_users_alerts_reports.sql
+-- Flyway applies it automatically when the Spring Boot application starts.
