@@ -16,4 +16,3 @@ COPY --from=build /workspace/backend/target/*.jar /app/app.jar
 EXPOSE 10000
 
 ENTRYPOINT ["sh", "-c", "java -Dserver.port=${PORT:-10000} -jar /app/app.jar"]
-Paste these into the docker file
