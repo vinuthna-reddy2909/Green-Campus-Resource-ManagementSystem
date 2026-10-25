@@ -21,6 +21,16 @@ Dashboard; Waste Records; Segregation Management; Collection Tracking; E-waste I
 
 Maven is not installed system-wide in the authoring environment. The test run used a temporary Maven 3.9.9 download that was removed afterward. Install Maven locally to build and run the project as described below.
 
+## Deploy on Render
+
+The repository includes a Render Blueprint in [`render.yaml`](render.yaml). In Render, create a Blueprint from this GitHub repository and set the five prompted environment variables for the web service:
+
+- `DB_URL`: the JDBC URL for a publicly reachable MySQL database, including its required TLS options
+- `DB_USERNAME` and `DB_PASSWORD`: the database credentials
+- `CAMPUS_ADMIN_USERNAME` and `CAMPUS_ADMIN_PASSWORD`: the initial administrator credentials; the password must be at least 12 characters
+
+Enter credentials directly in Render's environment-variable form; do not commit them to the repository or put them in `render.yaml`. The Render service uses the repository-root Docker build context and the lowercase `dockerfile` path. Ensure the database allows connections from the Render service before deploying. The service listens on Render's `PORT` and uses `/` for its health check.
+
 ## Configure and run
 
 1. Create a MySQL database and account, for example:

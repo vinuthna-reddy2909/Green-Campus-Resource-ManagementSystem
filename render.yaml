@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: green-campus-resource-management
+    runtime: docker
+    plan: free
+    dockerfilePath: ./dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    envVars:
+      - key: DB_URL
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: CAMPUS_ADMIN_USERNAME
+        sync: false
+      - key: CAMPUS_ADMIN_PASSWORD
+        sync: false
